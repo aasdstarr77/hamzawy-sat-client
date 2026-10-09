@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>حمزاوي سات</title>
+<style>
+body{font-family:sans-serif;background:#0f172a;color:#fff;padding:20px}
+.card{background:#1e293b;padding:20px;border-radius:15px;max-width:400px;margin:auto}
+button{background:#22c55e;color:#000;padding:12px;width:100%;border:none;border-radius:10px;font-weight:bold;margin-top:10px}
+select,input,textarea{width:100%;padding:10px;margin:5px 0;border-radius:8px;border:none}
+</style>
+</head>
+<body>
+<div class="card">
+<h2>📡 حمزاوي سات</h2>
+<select id="service"><option>تركيب دش</option><option>تركيب كاميرات</option><option>صيانة دش</option><option>تركيب شاشات</option></select>
+<input id="phone" placeholder="رقم موبايلك">
+<input id="address" placeholder="العنوان - المنطقة">
+<textarea id="details" placeholder="تفاصيل الطلب"></textarea>
+<button onclick="send()">اطلب الآن عبر واتساب</button>
+<p id="msg"></p>
+</div>
+<script>
+function send(){
+ const s=document.getElementById('service').value
+ const p=document.getElementById('phone').value
+ const a=document.getElementById('address').value
+ const d=document.getElementById('details').value
+ if(!p||!a){document.getElementById('msg').innerText='اكتب الموبايل والعنوان';return}
+ const text=`طلب جديد - حمزاوي سات%0Aالخدمة: ${s}%0Aموبايل: ${p}%0Aالعنوان: ${a}%0Aتفاصيل: ${d}`
+ window.open(`https://wa.me/201000000000?text=${text}`,'_blank')
+ document.getElementById('msg').innerText='تم فتح الواتساب - سيتم التواصل معك'
+}
+</script>
+</div>
+</body>
+</html>

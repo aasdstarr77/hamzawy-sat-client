@@ -1,0 +1,6 @@
+{
+  "appId": "com.hamzawy.sat",
+  "appName": "حمزاوي سات",
+  "webDir": "dist",
+  "bundledWebRuntime": false
+}
