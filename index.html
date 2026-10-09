@@ -8,14 +8,14 @@
 <textarea id="details" placeholder="تفاصيل"></textarea>
 <button onclick="send()">اطلب الآن</button><p id="msg"></p></div>
 <script>
-const API_URL = 'https://hamzawy-sat-123.loca.lt';
+const API_URL = 'https://1236f35693f145.lhr.life';
 async function send(){
  const data={service:document.getElementById('service').value, phone:document.getElementById('phone').value, address:document.getElementById('address').value, details:document.getElementById('details').value};
  if(!data.phone||!data.address){document.getElementById('msg').innerText='اكتب الموبايل والعنوان';return}
  document.getElementById('msg').innerText='جاري الإرسال...';
- try{ await fetch(API_URL+'/api/orders',{method:'POST',headers:{'Content-Type':'application/json','Bypass-Tunnel-Reminder':'true'},body:JSON.stringify(data)}); }catch(e){}
+ try{ await fetch(API_URL+'/api/orders',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)}); }catch(e){}
  const text=`طلب جديد - حمزاوي سات%0Aالخدمة: ${data.service}%0Aموبايل: ${data.phone}%0Aالعنوان: ${data.address}%0Aتفاصيل: ${data.details}`;
  window.open(`https://wa.me/201000000000?text=${text}`,'_blank');
- document.getElementById('msg').innerText='✅ تم إرسال الطلب - هيظهر في صفحة الأدمن';
+ document.getElementById('msg').innerText='✅ تم إرسال الطلب';
 }
 </script></body></html>
